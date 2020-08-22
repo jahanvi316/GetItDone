@@ -1,5 +1,5 @@
 # Get It Done!
-Web Programming Final Project
+## Web Programming Final Project
 
 
 Due to the fast-paced generation, everyone’s schedule may not match up, even when living under one roof. This makes it difficult to communicate in households. Certain chores and tasks need to be complete around the house but distributing and confirming they are complete can be difficult to coordinate. For example, if my mom thinks I cleaned the bathrooms, but I assumed she had cleaned the bathrooms and neither of us clean the bathrooms. This will leave the bathrooms uncleaned. Vice versa, if my mom cleans the bathrooms but I was not aware that she cleaned them, I would reclean them for no reason. Another scenario where schedule coordination and communication are an issue is at a school, college, or workplace. In this case, doing a group project is difficult when trying to coordinate around everyone’s schedules. 
