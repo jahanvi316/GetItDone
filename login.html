@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <link rel="icon" type="image/gif/png" href="choresIcon.jpg">
+    <title>Get It Done!</title>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-storage.js"></script>
+    <script src="index.js"></script>
+    <script src="login.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+</head>
+
+<body style="background-color: #C2CAD0; justify-content: center; align-items: center;">
+    <img src="logo.png" width="500px" />
+
+    <div id="login" style="font-family: Verdana; width:fit-content;">
+        <form style="background-color: #B39BC8; padding: .5em; width: fit-content; display: block;">
+            <span style="font-size:20px; text-align: center; padding: 5em;">Login</span>
+            <br />
+            <br />
+            Username: <input type="text" id="username" required>
+            <br />
+            Password: <input type="password" id="password" required> <input type="checkbox" onclick="passwordToggle()">
+            <br />
+            <br />
+            <input type="button" value="Login" id="login" onclick="signIn()">
+            <input type="button" value="Signup" onclick="signup()">
+
+        </form>
+    </div>
+
+    <h4 style="font-family: Verdana; display: none; color: navy;" id="loginFailed">Login failed. Please check credentials and try again. </h4>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/gif/png" href="choresIcon.jpg">
+    <title>Get It Done!</title>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-storage.js"></script>
+    <script src="index.js"></script>
+    <script src="login.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+</head>
+
+<body style="background-color: #C2CAD0;">
+        <h1 style="align-items: center;">To-Do List</h1>
+        <div id="listDiv" style="height: min-content; width: min-content;">
+            <form style="padding: .5em;" id="list">
+
+            </form>
+
+        </div>
+        <div style="padding-left:5em; padding-bottom: 1em; height: min-content; width: min-content;">
+            <button type="button" class="button" onclick="addTaskButton()">+</button>
+        </div>
+
+        <div id="addTask" style="width: min-content; display: none; height: min-content;">
+            <form style="padding: .5em; background-color: #B39BC8; width: fit-content; height: min-content;" method="post" action="confirmation.php">
+                <label>
+                    <span class="required">*</span>Task Name: <input type="text" id="taskName" name="taskName" required>
+
+                </label>
+                <label>
+                    <span class="required">*</span>Description: <textarea id="taskDescription" name="taskDescription"
+                        required></textarea>
+
+                </label>
+                <label>
+                    Due Date: <input type="date" id="taskDate" name="taskDate">
+                </label>
+                <br />
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+
+            </form>
+        </div>
+
+        <button type="button" onClick="logout()">Log Out</button>
+</body>
+
+</html>

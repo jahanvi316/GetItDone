@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <link rel="icon" type="image/gif/png" href="choresIcon.jpg">
+    <title>Get It Done!</title>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-storage.js"></script>
+    <script src="index.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+</head>
+
+<body style="background-color: #C2CAD0; justify-content: center; align-items: center;">
+    <img src="logo.png" width="500px" />
+    <div id="signup" style="font-family: Verdana; width:fit-content;">
+        <form style="background-color: #B39BC8; padding: .5em; width: fit-content; display: block;"
+            onsubmit="addUser(); return false;">
+            <span style="font-size:20px; text-align: center; padding: 5em;">Signup</span>
+            <br />
+            <br />
+            Name: <input type="text" id="name" required>
+            <br />
+            Email: <input type="email" id="email" required>
+            <br />
+            Username: <input type="text" id="username" required>
+            <br />
+            Password: <input type="password" id="password" required> <input type="checkbox" onclick="passwordToggle()">
+            <br />
+            <br />
+            <input type="submit" value="Sign Up">
+
+        </form>
+        <h4 style="font-family: Verdana; display: none; color: navy;" id="userCreated">User is created</h4>
+    </div>
+
+
+    <script>
+        //  var database = firebase.database();
+        function passwordToggle() {
+            var pass = document.getElementById("password");
+            if (pass.type === "password") {
+                pass.type = "text";
+            }
+            else {
+                pass.type = "password";
+            }
+        }
+
+        function addUser() {
+            var database = firebase.database();
+            var ref = firebase.database().ref("users");
+            var nameInput = document.getElementById("name").value;
+            var emailInput = document.getElementById("email").value;
+            var usernameInput = document.getElementById("username").value;
+            var passwordInput = document.getElementById("password").value;
+            // ref.on("value", function (snapshot) {
+            //     output.innerHTML = JSON.stringify(snapshot.val(), null, 2);
+            // });
+            var user = ref.child(usernameInput);
+
+            user.set({
+                name: nameInput,
+                email: emailInput,
+                password: passwordInput,
+                task: ""
+            });
+
+            var x = document.getElementById("userCreated");
+            x.style.display = "inline";
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
